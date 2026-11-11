@@ -1,9 +1,9 @@
 TRIM, THRUST REQUIRED, AND POWER REQUIRED ANALYSIS OF A CROPPED DELTA WING UAV
-                                          Aircraft Design 
-
+Aircraft Design – Student Project Assignment 4
+Student name: SAYAN ROY
+Department/Section: ECE        College: ACADEMY OF TECHNOLOGY
 1. Objective
 The objective is to analyse the trim condition, thrust required and power required of a cropped delta wing UAV in steady level flight. The angle of attack is varied from 0° to 12° in increments of 0.5°. For each condition, the trim elevator deflection, lift and drag coefficients, flight velocity, thrust required, power required and performance metrics are evaluated.
-
 2. Given data
 Parameter	Symbol	Value
 Root chord	Cr	0.9 m
@@ -19,17 +19,14 @@ Pitch-moment control derivative	Cmδe	−0.4
 Mass	m	3.5 kg
 Air density	ρ	1.225 kg/m³
 Gravity	g	10 m/s²
-
 3. Assumption and data limitation
 The assignment gives the lift equation CL = CL0 + CLαα + CLδeδe, but it does not provide a numerical value for CL0. To produce a complete provisional calculation set, this report assumes CL0 = 0. This assumption must be confirmed with the instructor. If a different CL0 is supplied, all lift-dependent results (velocity, drag, thrust, power and performance metrics) must be recalculated. Angles are converted to radians before being used with aerodynamic derivatives given per radian.
-
 4. Geometric preprocessing calculations
 Taper ratio: λ = Ct/Cr = 0.15/0.9 = 0.1667.
 Wing planform area: S = (b/2)Cr(1 + λ) = (1.5/2)(0.9)(1 + 0.1667) = 0.7875 m^2.
 Aspect ratio: AR = b²/S = 1.5²/0.7875 = 2.8571.
 Induced-drag factor: k = 1/(πeAR) = 1/(π × 0.89 × 2.8571) = 0.12518.
 Aircraft weight: W = mg = 3.5 × 10 = 35.00 N.
-
 5. Mathematical formulation
 Trim moment equation: Cm = Cm0 + Cmα α + Cmδe δe = 0
 Trim elevator deflection: δe = −(Cm0 + Cmα α)/Cmδe
@@ -40,7 +37,6 @@ Flight velocity: V = √[2W/(ρ S CL)]
 Thrust required: Tr = D = ½ ρ V² S CD
 Power required: Pr = Tr V
 Performance metrics: CL/CD and CL^(3/2)/CD
-
 6. Calculation procedure
 1.	Convert each angle of attack from degrees to radians.
 2.	Calculate the elevator deflection that makes the pitching-moment coefficient zero.
@@ -50,7 +46,6 @@ Performance metrics: CL/CD and CL^(3/2)/CD
 6.	Calculate thrust required from the drag force and power required from thrust multiplied by velocity.
 7.	Calculate CL/CD and CL^(3/2)/CD for every angle of attack.
 8.	Store the results in a table and plot the eight required relationships.
-
 7. Numerical results
 The following table uses CL0 = 0 provisionally. Elevator deflection is shown in degrees for readability; the calculation uses radians.
 α (°)	δe (°)	CL	V (m/s)	CD	Tr (N)	Pr (W)	CL/CD	CL^1.5/CD
@@ -79,10 +74,31 @@ The following table uses CL0 = 0 provisionally. Elevator deflection is shown in 
 11.0	-6.598	0.5301	11.700	0.0652	4.303	50.348	8.133	5.922
 11.5	-6.963	0.5539	11.446	0.0684	4.322	49.473	8.097	6.026
 12.0	-7.328	0.5777	11.208	0.0718	4.349	48.737	8.049	6.117
-
+8. Required plots
+ 
+Figure 1. Flight velocity versus angle of attack.
+ 
+Figure 2. Trim elevator deflection versus angle of attack.
+ 
+Figure 3. Lift coefficient versus angle of attack.
+ 
+Figure 4. Drag coefficient versus angle of attack.
+ 
+Figure 5. Thrust required versus flight velocity.
+ 
+Figure 6. Power required versus flight velocity.
+ 
+Figure 7. CL/CD versus angle of attack.
+ 
+Figure 8. CL^(3/2)/CD versus angle of attack.
 9. Results and discussion
 Under the provisional CL0 = 0 assumption, the trim elevator deflection becomes more negative as angle of attack increases because the moment equation must remain at zero. The lift coefficient increases with angle of attack for the supplied derivatives and this trim relationship. Since weight is fixed, a higher lift coefficient permits steady level flight at a lower velocity. The drag coefficient increases with CL² according to the parabolic drag polar. Thrust required equals drag in steady level flight, while power required is thrust multiplied by velocity. The two performance ratios describe aerodynamic efficiency and should be interpreted from their plotted trends.
 In this provisional dataset, the calculated velocity ranges from 11.21 m/s to 104.66 m/s. These numerical values are conditional on CL0 = 0 and should not be treated as final until the missing coefficient is confirmed.
-
 10. Conclusion
 A computational procedure has been formulated to determine trim elevator deflection and steady-level-flight performance for the cropped delta wing UAV. Geometric parameters, aerodynamic coefficients, velocity, drag, thrust, power and performance metrics have been evaluated over the specified angle-of-attack range. The analysis demonstrates the coupling between trim, lift, drag and propulsion requirements. The final submission should replace the provisional CL0 assumption if the instructor provides a different value.
+11. Submission checklist
+•	Completed report with problem description, geometry, equations, assumptions, results and discussion.
+•	MATLAB code prepared separately (not included in this package).
+•	Calculation spreadsheet containing all angle-of-attack rows and results.
+•	Eight labelled plots with units.
+•	Confirmation of CL0 from the instructor.
